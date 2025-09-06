@@ -163,7 +163,7 @@ export const RecipeDetailScreen = ({ recipe, onBack, onConfirmIngredients }: Rec
             className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-work-sans text-base h-12"
           >
             <Check className="w-5 h-5 mr-2" />
-            I have all ingredients - Let's cook!
+            Let's cook!
           </Button>
           
           <Button 
