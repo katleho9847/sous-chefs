@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { Utensils, Heart } from "lucide-react";
 import cookingHero from "@/assets/cooking-hero.jpg";
 import { LadleIcon } from "./LadleIcon";
 
@@ -41,14 +40,6 @@ export const SplashScreen = ({ onComplete }: SplashScreenProps) => {
         </div>
       </div>
 
-      {/* Floating cooking icons */}
-      <div className="absolute top-1/4 left-1/4 animate-float">
-        <Utensils className="w-8 h-8 text-white/60" />
-      </div>
-      <div className="absolute top-1/3 right-1/4 animate-float" style={{ animationDelay: '1s' }}>
-        <Heart className="w-6 h-6 text-white/60" />
-      </div>
-
       {/* Greeting text */}
       <div className="relative z-10 text-center px-8">
         {showGreeting && (
@@ -59,7 +50,7 @@ export const SplashScreen = ({ onComplete }: SplashScreenProps) => {
         
         {showSubtext && (
           <p className="text-xl opacity-90 animate-fade-in font-work-sans">
-            Let's cook something amazing together
+            Let's get cooking
           </p>
         )}
       </div>
