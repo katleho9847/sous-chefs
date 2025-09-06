@@ -4,12 +4,24 @@ import { HomeScreen } from "@/components/HomeScreen";
 import { RecipesScreen } from "@/components/RecipesScreen";
 import { ProfileScreen } from "@/components/ProfileScreen";
 import { FriendsScreen } from "@/components/FriendsScreen";
+import { RecipeDetailScreen } from "@/components/RecipeDetailScreen";
 import { BottomNavigation } from "@/components/BottomNavigation";
+
+interface Recipe {
+  id: string;
+  title: string;
+  image: string;
+  cookTime: string;
+  chef: string;
+  rating: number;
+  description: string;
+}
 
 const Index = () => {
   const [showSplash, setShowSplash] = useState(true);
   const [activeTab, setActiveTab] = useState("home");
   const [showProfile, setShowProfile] = useState(false);
+  const [selectedRecipe, setSelectedRecipe] = useState<Recipe | null>(null);
 
   const handleSplashComplete = () => {
     setShowSplash(false);
@@ -23,18 +35,41 @@ const Index = () => {
     setShowProfile(false);
   };
 
+  const handleRecipeClick = (recipe: Recipe) => {
+    setSelectedRecipe(recipe);
+  };
+
+  const handleRecipeBack = () => {
+    setSelectedRecipe(null);
+  };
+
+  const handleConfirmIngredients = () => {
+    // TODO: Navigate to cooking mode
+    console.log('Starting cooking mode for:', selectedRecipe?.title);
+  };
+
   const renderScreen = () => {
+    if (selectedRecipe) {
+      return (
+        <RecipeDetailScreen 
+          recipe={selectedRecipe}
+          onBack={handleRecipeBack}
+          onConfirmIngredients={handleConfirmIngredients}
+        />
+      );
+    }
+    
     if (showProfile) {
       return <ProfileScreen onClose={handleProfileClose} />;
     }
     
     switch (activeTab) {
       case "favourites":
-        return <RecipesScreen />;
+        return <RecipesScreen onRecipeClick={handleRecipeClick} />;
       case "friends":
         return <FriendsScreen />;
       default:
-        return <HomeScreen onProfileClick={handleProfileClick} />;
+        return <HomeScreen onProfileClick={handleProfileClick} onRecipeClick={handleRecipeClick} />;
     }
   };
 
@@ -47,10 +82,12 @@ const Index = () => {
       <div className="animate-slide-up">
         {renderScreen()}
       </div>
-      <BottomNavigation 
-        activeTab={activeTab} 
-        onTabChange={setActiveTab} 
-      />
+      {!selectedRecipe && (
+        <BottomNavigation 
+          activeTab={activeTab} 
+          onTabChange={setActiveTab} 
+        />
+      )}
     </div>
   );
 };

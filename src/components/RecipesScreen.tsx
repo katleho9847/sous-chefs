@@ -6,6 +6,16 @@ import pastaImage from "@/assets/pasta-recipe.jpg";
 import buddhaBowlImage from "@/assets/buddha-bowl.jpg";
 import chickenDinnerImage from "@/assets/chicken-dinner.jpg";
 
+interface Recipe {
+  id: string;
+  title: string;
+  image: string;
+  cookTime: string;
+  chef: string;
+  rating: number;
+  description: string;
+}
+
 // Mock recipe data - expanded list
 const allRecipes = [
   {
@@ -37,7 +47,7 @@ const allRecipes = [
   },
 ];
 
-export const RecipesScreen = () => {
+export const RecipesScreen = ({ onRecipeClick }: { onRecipeClick?: (recipe: Recipe) => void }) => {
   return (
     <div className="min-h-screen bg-background pb-20">
       {/* Header */}
@@ -109,7 +119,7 @@ export const RecipesScreen = () => {
             <RecipeCard 
               key={recipe.id} 
               recipe={recipe} 
-              onClick={(recipe) => console.log('Recipe clicked:', recipe.title)}
+              onClick={onRecipeClick}
             />
           ))}
         </div>

@@ -53,10 +53,22 @@ const forYouRecipes = [{
   description: "Authentic Italian pizza with fresh basil, mozzarella, and tomato sauce."
 }];
 const quickSuggestions = ["Pasta recipes", "Healthy bowls", "Quick dinners", "Vegetarian", "One-pot meals"];
+interface Recipe {
+  id: string;
+  title: string;
+  image: string;
+  cookTime: string;
+  chef: string;
+  rating: number;
+  description: string;
+}
+
 export const HomeScreen = ({
-  onProfileClick
+  onProfileClick,
+  onRecipeClick
 }: {
   onProfileClick?: () => void;
+  onRecipeClick?: (recipe: Recipe) => void;
 }) => {
   const [searchQuery, setSearchQuery] = useState("");
   return <div className="min-h-screen bg-background pb-20">
@@ -87,7 +99,7 @@ export const HomeScreen = ({
             <h2 className="text-lg font-semibold text-foreground font-crimson">Trending recipes</h2>
           </div>
           <div className="flex gap-4 overflow-x-auto pb-2">
-            {trendingRecipes.map(recipe => <div key={recipe.id} className="flex-shrink-0 w-72"><RecipeCard recipe={recipe} onClick={recipe => console.log('Recipe clicked:', recipe.title)} /></div>)}
+            {trendingRecipes.map(recipe => <div key={recipe.id} className="flex-shrink-0 w-72"><RecipeCard recipe={recipe} onClick={onRecipeClick} /></div>)}
           </div>
         </div>
 
@@ -98,7 +110,7 @@ export const HomeScreen = ({
             <h2 className="text-lg font-semibold text-foreground font-crimson">Recipes for you</h2>
           </div>
           <div className="flex gap-4 overflow-x-auto pb-2">
-            {forYouRecipes.map(recipe => <div key={recipe.id} className="flex-shrink-0 w-72"><RecipeCard recipe={recipe} onClick={recipe => console.log('Recipe clicked:', recipe.title)} /></div>)}
+            {forYouRecipes.map(recipe => <div key={recipe.id} className="flex-shrink-0 w-72"><RecipeCard recipe={recipe} onClick={onRecipeClick} /></div>)}
           </div>
         </div>
       </div>
