@@ -31,18 +31,18 @@ export const RecipeCard = ({ recipe, onClick }: RecipeCardProps) => {
         />
         <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-full px-2 py-1 flex items-center gap-1">
           <Star className="w-3 h-3 text-primary fill-primary" />
-          <span className="text-xs font-medium text-secondary font-oswald">{recipe.rating}</span>
+          <span className="text-xs font-medium text-secondary font-plex-mono">{recipe.rating}</span>
         </div>
         <div className="absolute top-3 left-3 bg-secondary/90 backdrop-blur-sm rounded-full px-2 py-1">
-          <span className="text-xs font-medium text-secondary-foreground font-oswald">{recipe.difficulty}</span>
+          <span className="text-xs font-medium text-secondary-foreground font-plex-mono">{recipe.difficulty}</span>
         </div>
       </div>
       
       <CardContent className="p-4">
-        <h3 className="font-bold text-lg mb-2 text-foreground group-hover:text-primary transition-colors font-poppins">
+        <h3 className="font-bold text-lg mb-2 text-foreground group-hover:text-primary transition-colors font-crimson">
           {recipe.title}
         </h3>
-        <p className="text-sm text-muted-foreground mb-4 line-clamp-2 font-source">
+        <p className="text-sm text-muted-foreground mb-4 line-clamp-2 font-work-sans">
           {recipe.description}
         </p>
         

@@ -46,7 +46,7 @@ export const RecipesScreen = () => {
       {/* Header */}
       <div className="bg-secondary text-secondary-foreground px-4 pt-12 pb-6">
         <div className="max-w-md mx-auto">
-          <h1 className="text-2xl font-bold mb-6 font-poppins">My Recipe Collection</h1>
+          <h1 className="text-2xl font-bold mb-6 font-crimson">My Recipe Collection</h1>
           
           {/* Search and filter */}
           <div className="flex gap-3 mb-4">
@@ -90,19 +90,19 @@ export const RecipesScreen = () => {
         {/* Stats */}
         <div className="grid grid-cols-3 gap-4 mb-6">
           <div className="bg-card-gradient rounded-xl p-4 text-center border border-border/50">
-            <div className="text-2xl font-bold text-primary mb-1 font-poppins">{allRecipes.length}</div>
-            <div className="text-xs text-muted-foreground font-oswald">Saved Recipes</div>
+            <div className="text-2xl font-bold text-primary mb-1 font-yeseva">{allRecipes.length}</div>
+            <div className="text-xs text-muted-foreground font-plex-mono">Saved Recipes</div>
           </div>
           <div className="bg-card-gradient rounded-xl p-4 text-center border border-border/50">
-            <div className="text-2xl font-bold text-secondary mb-1 font-poppins">12</div>
-            <div className="text-xs text-muted-foreground font-oswald">Cooked This Week</div>
+            <div className="text-2xl font-bold text-secondary mb-1 font-yeseva">12</div>
+            <div className="text-xs text-muted-foreground font-plex-mono">Cooked This Week</div>
           </div>
           <div className="bg-card-gradient rounded-xl p-4 text-center border border-border/50">
             <div className="flex items-center justify-center gap-1 mb-1">
               <Clock className="w-4 h-4 text-primary" />
-              <div className="text-lg font-bold text-foreground font-poppins">28m</div>
+              <div className="text-lg font-bold text-foreground font-yeseva">28m</div>
             </div>
-            <div className="text-xs text-muted-foreground font-oswald">Avg Cook Time</div>
+            <div className="text-xs text-muted-foreground font-plex-mono">Avg Cook Time</div>
           </div>
         </div>
 

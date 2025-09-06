@@ -51,13 +51,13 @@ export const SplashScreen = ({ onComplete }: SplashScreenProps) => {
       {/* Greeting text */}
       <div className="relative z-10 text-center px-8">
         {showGreeting && (
-          <h1 className="text-4xl font-bold mb-4 animate-fade-in font-poppins">
+          <h1 className="text-4xl font-bold mb-4 animate-fade-in font-yeseva">
             Hello Rachel! 👋
           </h1>
         )}
         
         {showSubtext && (
-          <p className="text-xl opacity-90 animate-fade-in font-source">
+          <p className="text-xl opacity-90 animate-fade-in font-work-sans">
             Let's cook something amazing together
           </p>
         )}

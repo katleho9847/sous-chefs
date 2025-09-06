@@ -14,9 +14,10 @@ export default {
     },
     extend: {
       fontFamily: {
-        'poppins': ['Poppins', 'sans-serif'],
-        'source': ['Source Sans Pro', 'sans-serif'],
-        'oswald': ['Oswald', 'sans-serif'],
+        'yeseva': ['Yeseva One', 'serif'],
+        'crimson': ['Crimson Pro', 'serif'],
+        'work-sans': ['Work Sans', 'sans-serif'],
+        'plex-mono': ['IBM Plex Mono', 'monospace'],
       },
       colors: {
         border: "hsl(var(--border))",
