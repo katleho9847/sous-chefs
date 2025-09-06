@@ -54,13 +54,6 @@ export const SplashScreen = ({ onComplete }: SplashScreenProps) => {
           </p>
         )}
       </div>
-
-      {/* Loading indicator */}
-      <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2">
-        <div className="w-12 h-1 bg-white/20 rounded-full overflow-hidden">
-          <div className="w-full h-full bg-white rounded-full animate-pulse" />
-        </div>
-      </div>
     </div>
   );
 };
