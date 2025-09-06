@@ -156,21 +156,12 @@ export const CookingScreen = ({ recipe, onBack }: CookingScreenProps) => {
                 </Button>
               )}
               
-              {currentStep < cookingSteps.length - 1 ? (
-                <Button
-                  onClick={() => setCurrentStep(currentStep + 1)}
-                  className="flex-1 bg-primary hover:bg-primary/90 text-primary-foreground"
-                >
-                  Next Step
-                </Button>
-              ) : (
-                <Button
-                  onClick={onBack}
-                  className="flex-1 bg-primary hover:bg-primary/90 text-primary-foreground"
-                >
-                  Finish Cooking!
-                </Button>
-              )}
+              <Button
+                onClick={onBack}
+                className="flex-1 bg-primary hover:bg-primary/90 text-primary-foreground"
+              >
+                Finish Cooking!
+              </Button>
             </div>
           </div>
         </div>
