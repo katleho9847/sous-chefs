@@ -74,8 +74,7 @@ export const HomeScreen = ({ onProfileClick }: { onProfileClick?: () => void }) 
         <div className="max-w-md mx-auto">
           <div className="flex items-center justify-between mb-6">
             <div>
-              <h1 className="text-2xl font-bold mb-1 font-crimson">Good evening, Rachel! 🌅</h1>
-              <p className="text-white/80 font-work-sans">What shall we cook today?</p>
+              <h1 className="text-2xl font-bold mb-1 font-crimson">What are we cooking today</h1>
             </div>
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
@@ -87,35 +86,20 @@ export const HomeScreen = ({ onProfileClick }: { onProfileClick?: () => void }) 
                 className="text-white hover:bg-white/20 p-2"
                 onClick={onProfileClick}
               >
-                <span className="text-2xl">👩‍🍳</span>
+                <span className="text-2xl">👤</span>
               </Button>
             </div>
           </div>
 
           {/* Search bar */}
-          <div className="relative mb-4">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-white/60" />
+          <div className="relative">
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted-foreground" />
             <Input 
               placeholder="Search recipes, ingredients..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-10 bg-white/10 border-white/20 text-white placeholder-white/60 backdrop-blur-sm"
+              className="pl-10 bg-white border-border text-foreground placeholder-muted-foreground"
             />
-          </div>
-
-          {/* Quick suggestions */}
-          <div className="flex gap-2 overflow-x-auto pb-2">
-            {quickSuggestions.map((suggestion) => (
-              <Button 
-                key={suggestion}
-                variant="outline" 
-                size="sm"
-                className="bg-white/10 border-white/20 text-white hover:bg-white/20 whitespace-nowrap"
-                onClick={() => setSearchQuery(suggestion)}
-              >
-                {suggestion}
-              </Button>
-            ))}
           </div>
         </div>
       </div>
