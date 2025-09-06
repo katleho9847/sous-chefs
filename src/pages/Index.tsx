@@ -36,7 +36,9 @@ const Index = () => {
   };
 
   const handleRecipeClick = (recipe: Recipe) => {
+    console.log('handleRecipeClick called with:', recipe);
     setSelectedRecipe(recipe);
+    console.log('selectedRecipe state should now be:', recipe);
   };
 
   const handleRecipeBack = () => {
@@ -49,7 +51,10 @@ const Index = () => {
   };
 
   const renderScreen = () => {
+    console.log('renderScreen called, selectedRecipe:', selectedRecipe);
+    
     if (selectedRecipe) {
+      console.log('Rendering RecipeDetailScreen for:', selectedRecipe.title);
       return (
         <RecipeDetailScreen 
           recipe={selectedRecipe}
