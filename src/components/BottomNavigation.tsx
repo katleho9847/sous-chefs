@@ -32,7 +32,7 @@ export const BottomNavigation = ({ activeTab, onTabChange }: BottomNavigationPro
               )}
             >
               <Icon className={cn("w-5 h-5 mb-1", isActive && "animate-bounce-in")} />
-              <span className="text-xs font-medium truncate">
+              <span className="text-xs font-medium truncate font-oswald">
                 {tab.label}
               </span>
             </button>

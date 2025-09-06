@@ -27,21 +27,21 @@ export const ProfileScreen = () => {
             </Button>
           </div>
           
-          <h1 className="text-2xl font-bold mb-2">Rachel Thompson</h1>
-          <p className="text-white/80 mb-4">Cooking enthusiast since 2024</p>
+          <h1 className="text-2xl font-bold mb-2 font-poppins">Rachel Thompson</h1>
+          <p className="text-white/80 mb-4 font-source">Cooking enthusiast since 2024</p>
           
           <div className="flex justify-center gap-8">
             <div className="text-center">
-              <div className="text-xl font-bold">47</div>
-              <div className="text-xs text-white/80">Recipes Cooked</div>
+              <div className="text-xl font-bold font-poppins">47</div>
+              <div className="text-xs text-white/80 font-oswald">Recipes Cooked</div>
             </div>
             <div className="text-center">
-              <div className="text-xl font-bold">12</div>
-              <div className="text-xs text-white/80">Favorites</div>
+              <div className="text-xl font-bold font-poppins">12</div>
+              <div className="text-xs text-white/80 font-oswald">Favorites</div>
             </div>
             <div className="text-center">
-              <div className="text-xl font-bold">3</div>
-              <div className="text-xs text-white/80">Created</div>
+              <div className="text-xl font-bold font-poppins">3</div>
+              <div className="text-xs text-white/80 font-oswald">Created</div>
             </div>
           </div>
         </div>
@@ -53,8 +53,8 @@ export const ProfileScreen = () => {
         <Card className="bg-card-gradient border border-border/50 shadow-card">
           <CardContent className="p-4">
             <div className="flex items-center justify-between mb-3">
-              <h3 className="font-semibold text-foreground">Cooking Streak 🔥</h3>
-              <span className="text-2xl font-bold text-primary">7 days</span>
+              <h3 className="font-semibold text-foreground font-poppins">Cooking Streak 🔥</h3>
+              <span className="text-2xl font-bold text-primary font-poppins">7 days</span>
             </div>
             <div className="flex gap-1">
               {[1,2,3,4,5,6,7].map((day) => (
@@ -64,7 +64,7 @@ export const ProfileScreen = () => {
                 />
               ))}
             </div>
-            <p className="text-sm text-muted-foreground mt-2">
+            <p className="text-sm text-muted-foreground mt-2 font-source">
               Keep it up! You're on fire this week! 🎉
             </p>
           </CardContent>
@@ -72,7 +72,7 @@ export const ProfileScreen = () => {
 
         {/* Achievements */}
         <div>
-          <h3 className="text-lg font-semibold text-foreground mb-4">Achievements</h3>
+          <h3 className="text-lg font-semibold text-foreground mb-4 font-poppins">Achievements</h3>
           <div className="grid grid-cols-2 gap-3">
             {achievements.map((achievement) => {
               const Icon = achievement.icon;
@@ -93,12 +93,12 @@ export const ProfileScreen = () => {
                     }`}>
                       <Icon className="w-6 h-6" />
                     </div>
-                    <h4 className={`font-medium text-sm mb-1 ${
+                    <h4 className={`font-medium text-sm mb-1 font-oswald ${
                       achievement.earned ? 'text-foreground' : 'text-muted-foreground'
                     }`}>
                       {achievement.title}
                     </h4>
-                    <p className="text-xs text-muted-foreground">
+                    <p className="text-xs text-muted-foreground font-source">
                       {achievement.description}
                     </p>
                   </CardContent>
@@ -111,7 +111,7 @@ export const ProfileScreen = () => {
         {/* Settings */}
         <Card className="bg-card-gradient border border-border/50 shadow-card">
           <CardContent className="p-4">
-            <h3 className="font-semibold text-foreground mb-4">Settings</h3>
+            <h3 className="font-semibold text-foreground mb-4 font-poppins">Settings</h3>
             <div className="space-y-3">
               <Button variant="ghost" className="w-full justify-start">
                 <Settings className="w-4 h-4 mr-3" />

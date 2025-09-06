@@ -55,8 +55,8 @@ export const HomeScreen = () => {
         <div className="max-w-md mx-auto">
           <div className="flex items-center justify-between mb-6">
             <div>
-              <h1 className="text-2xl font-bold mb-1">Good evening, Rachel! 🌅</h1>
-              <p className="text-white/80">What shall we cook today?</p>
+              <h1 className="text-2xl font-bold mb-1 font-poppins">Good evening, Rachel! 🌅</h1>
+              <p className="text-white/80 font-source">What shall we cook today?</p>
             </div>
             <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
               <ChefHat className="w-6 h-6" />
@@ -99,13 +99,13 @@ export const HomeScreen = () => {
             <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
               <Sparkles className="w-4 h-4 text-primary" />
             </div>
-            <h2 className="text-lg font-semibold text-foreground">AI Recommendations</h2>
+            <h2 className="text-lg font-semibold text-foreground font-poppins">AI Recommendations</h2>
           </div>
           <div className="bg-accent/50 rounded-xl p-4 border border-primary/10">
-            <p className="text-sm text-foreground mb-3">
+            <p className="text-sm text-foreground mb-3 font-source">
               Based on your preferences, I'd recommend trying something light and fresh for tonight!
             </p>
-            <Button size="sm" className="bg-primary hover:bg-primary-dark text-primary-foreground">
+            <Button size="sm" className="bg-primary hover:bg-primary-dark text-primary-foreground font-oswald">
               Get Recipe Suggestion
             </Button>
           </div>
@@ -117,7 +117,7 @@ export const HomeScreen = () => {
             <div className="w-8 h-8 bg-secondary/10 rounded-full flex items-center justify-center">
               <TrendingUp className="w-4 h-4 text-secondary" />
             </div>
-            <h2 className="text-lg font-semibold text-foreground">Featured Recipes</h2>
+            <h2 className="text-lg font-semibold text-foreground font-poppins">Featured Recipes</h2>
           </div>
           <div className="grid gap-4">
             {featuredRecipes.map((recipe) => (
