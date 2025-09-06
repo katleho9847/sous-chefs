@@ -41,23 +41,23 @@ export const RecipesScreen = () => {
   return (
     <div className="min-h-screen bg-background pb-20">
       {/* Header */}
-      <div className="bg-secondary text-secondary-foreground px-4 pt-12 pb-6">
+      <div className="bg-hero-gradient text-white px-4 pt-6 pb-4">
         <div className="max-w-md mx-auto">
           <h1 className="text-2xl font-bold mb-6 font-crimson">My Favourite Recipes</h1>
           
           {/* Search and filter */}
           <div className="flex gap-3 mb-4">
             <div className="relative flex-1">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-secondary-foreground/60" />
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-white/60" />
               <Input 
                 placeholder="Search favourites..."
-                className="pl-10 bg-white/10 border-white/20 text-secondary-foreground placeholder-secondary-foreground/60"
+                className="pl-10 bg-white border-border text-foreground placeholder-muted-foreground"
               />
             </div>
             <Button 
               variant="outline" 
               size="sm"
-              className="bg-white/10 border-white/20 text-secondary-foreground hover:bg-white/20"
+              className="bg-white/10 border-white/20 text-white hover:bg-white/20"
             >
               <Filter className="w-4 h-4" />
             </Button>
@@ -72,7 +72,7 @@ export const RecipesScreen = () => {
                 size="sm"
                 className={filter === "All" 
                   ? "bg-primary text-primary-foreground" 
-                  : "bg-white/10 border-white/20 text-secondary-foreground hover:bg-white/20"
+                  : "bg-white/10 border-white/20 text-white hover:bg-white/20"
                 }
               >
                 {filter}

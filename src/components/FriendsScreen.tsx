@@ -47,23 +47,23 @@ export const FriendsScreen = () => {
   return (
     <div className="min-h-screen bg-background pb-20">
       {/* Header */}
-      <div className="bg-accent text-accent-foreground px-4 pt-12 pb-6">
+      <div className="bg-hero-gradient text-white px-4 pt-6 pb-4">
         <div className="max-w-md mx-auto">
           <h1 className="text-2xl font-bold mb-6 font-crimson">Cooking Friends</h1>
           
           {/* Search and add friend */}
           <div className="flex gap-3 mb-4">
             <div className="relative flex-1">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-accent-foreground/60" />
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-white/60" />
               <Input 
                 placeholder="Search friends..."
-                className="pl-10 bg-white/10 border-white/20 text-accent-foreground placeholder-accent-foreground/60"
+                className="pl-10 bg-white border-border text-foreground placeholder-muted-foreground"
               />
             </div>
             <Button 
               variant="outline" 
               size="sm"
-              className="bg-white/10 border-white/20 text-accent-foreground hover:bg-white/20"
+              className="bg-white/10 border-white/20 text-white hover:bg-white/20"
             >
               <UserPlus className="w-4 h-4" />
             </Button>
