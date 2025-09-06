@@ -5,6 +5,7 @@ import { RecipesScreen } from "@/components/RecipesScreen";
 import { ProfileScreen } from "@/components/ProfileScreen";
 import { FriendsScreen } from "@/components/FriendsScreen";
 import { RecipeDetailScreen } from "@/components/RecipeDetailScreen";
+import { CookingScreen } from "@/components/CookingScreen";
 import { BottomNavigation } from "@/components/BottomNavigation";
 
 interface Recipe {
@@ -22,6 +23,7 @@ const Index = () => {
   const [activeTab, setActiveTab] = useState("home");
   const [showProfile, setShowProfile] = useState(false);
   const [selectedRecipe, setSelectedRecipe] = useState<Recipe | null>(null);
+  const [showCooking, setShowCooking] = useState(false);
 
   const handleSplashComplete = () => {
     setShowSplash(false);
@@ -46,12 +48,24 @@ const Index = () => {
   };
 
   const handleConfirmIngredients = () => {
-    // TODO: Navigate to cooking mode
-    console.log('Starting cooking mode for:', selectedRecipe?.title);
+    setShowCooking(true);
+  };
+
+  const handleCookingBack = () => {
+    setShowCooking(false);
   };
 
   const renderScreen = () => {
     console.log('renderScreen called, selectedRecipe:', selectedRecipe);
+    
+    if (selectedRecipe && showCooking) {
+      return (
+        <CookingScreen 
+          recipe={selectedRecipe}
+          onBack={handleCookingBack}
+        />
+      );
+    }
     
     if (selectedRecipe) {
       console.log('Rendering RecipeDetailScreen for:', selectedRecipe.title);
@@ -87,7 +101,7 @@ const Index = () => {
       <div className="animate-slide-up">
         {renderScreen()}
       </div>
-      {!selectedRecipe && (
+      {!selectedRecipe && !showCooking && (
         <BottomNavigation 
           activeTab={activeTab} 
           onTabChange={setActiveTab} 
