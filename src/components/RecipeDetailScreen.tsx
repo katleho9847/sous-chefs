@@ -1,7 +1,6 @@
-import { ArrowLeft, Check, X } from "lucide-react";
+import { Check, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 
 interface Recipe {
   id: string;
@@ -78,38 +77,32 @@ export const RecipeDetailScreen = ({ recipe, onBack, onConfirmIngredients }: Rec
 
   return (
     <div className="min-h-screen bg-background pb-20">
-      {/* Header */}
-      <div className="bg-hero-gradient text-white px-4 pt-6 pb-4">
-        <div className="max-w-md mx-auto">
-          <div className="flex items-center gap-3 mb-4">
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={onBack}
-              className="text-white hover:bg-white/10 p-2"
-            >
-              <ArrowLeft className="w-5 h-5" />
-            </Button>
-            <h1 className="text-xl font-bold font-crimson">Recipe Details</h1>
-          </div>
-        </div>
-      </div>
-
       {/* Content */}
-      <div className="max-w-md mx-auto px-4 py-6">
+      <div className="max-w-md mx-auto">
         {/* Recipe Image and Info */}
-        <Card className="overflow-hidden shadow-card mb-6 bg-card-gradient">
+        <Card className="overflow-hidden shadow-card mb-6 bg-card-gradient rounded-none">
           <div className="relative">
             <img 
               src={recipe.image} 
               alt={recipe.title}
               className="w-full h-64 object-cover"
             />
+            {/* Back button */}
+            <div className="absolute top-3 left-3 bg-black/50 backdrop-blur-sm rounded-full p-2">
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={onBack}
+                className="text-white hover:bg-white/10 p-1 h-auto"
+              >
+                <ArrowLeft className="w-5 h-5" />
+              </Button>
+            </div>
+            {/* Rating */}
             <div className="absolute top-3 right-3 bg-black/50 backdrop-blur-sm rounded-full px-2 py-1 flex items-center gap-1">
               <span className="text-xs font-medium text-white font-plex-mono">★ {recipe.rating}</span>
             </div>
           </div>
-          
           <CardContent className="p-4">
             <h2 className="font-bold text-2xl mb-2 text-foreground font-crimson">
               {recipe.title}
@@ -135,44 +128,35 @@ export const RecipeDetailScreen = ({ recipe, onBack, onConfirmIngredients }: Rec
           </CardContent>
         </Card>
 
-        {/* Ingredients List */}
-        <Card className="shadow-card mb-6 bg-card-gradient">
-          <CardContent className="p-4">
-            <h3 className="font-bold text-lg mb-4 text-foreground font-crimson flex items-center gap-2">
-              <span>🛒</span>
-              Ingredients
-            </h3>
-            
-            <div className="space-y-3">
-              {ingredients.map((ingredient, index) => (
-                <div key={index} className="flex items-center justify-between p-3 bg-muted/50 rounded-lg">
-                  <span className="font-work-sans text-foreground">{ingredient.name}</span>
-                  <Badge variant="secondary" className="font-plex-mono">
-                    {ingredient.amount}
-                  </Badge>
-                </div>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
+        <div className="px-4">
+          {/* Ingredients List */}
+          <Card className="shadow-card mb-6 bg-card-gradient">
+            <CardContent className="p-4">
+              <h3 className="font-bold text-lg mb-4 text-foreground font-crimson flex items-center gap-2">
+                <span>🛒</span>
+                Ingredients
+              </h3>
+              
+              <div className="space-y-3">
+                {ingredients.map((ingredient, index) => (
+                  <div key={index} className="flex items-center justify-between p-3 bg-muted/50 rounded-lg">
+                    <span className="font-work-sans text-foreground">{ingredient.name}</span>
+                    <span className="font-work-sans text-foreground">
+                      {ingredient.amount}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
 
-        {/* Action Buttons */}
-        <div className="space-y-3">
+          {/* Action Button */}
           <Button 
             onClick={onConfirmIngredients}
             className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-work-sans text-base h-12"
           >
             <Check className="w-5 h-5 mr-2" />
             Let's cook!
-          </Button>
-          
-          <Button 
-            onClick={onBack}
-            variant="outline"
-            className="w-full font-work-sans text-base h-12"
-          >
-            <X className="w-5 h-5 mr-2" />
-            Find another recipe
           </Button>
         </div>
       </div>
