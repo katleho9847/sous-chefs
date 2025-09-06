@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { RecipeCard } from "./RecipeCard";
 import pastaImage from "@/assets/pasta-recipe.jpg";
-import carbonaraImage from "@/assets/carbonara-recipe.jpg";
+const carbonaraImage = "/lovable-uploads/36433a58-4c78-4a5c-8ace-70ce2b25cc10.png";
 import buddhaBowlImage from "@/assets/buddha-bowl.jpg";
 import chickenDinnerImage from "@/assets/chicken-dinner.jpg";
 import { LadleIcon } from "./LadleIcon";
