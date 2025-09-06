@@ -60,7 +60,7 @@ export const HomeScreen = ({
   const [searchQuery, setSearchQuery] = useState("");
   return <div className="min-h-screen bg-background pb-20">
       {/* Header */}
-      <div className="bg-hero-gradient text-white px-4 pt-12 pb-8">
+      <div className="bg-hero-gradient text-white px-4 pt-8 pb-6">
         <div className="max-w-md mx-auto">
           <div className="flex items-center justify-between mb-6">
             <div>
