@@ -85,8 +85,8 @@ export const HomeScreen = ({
             <span className="text-2xl">🔥</span>
             <h2 className="text-lg font-semibold text-foreground font-crimson">Trending recipes</h2>
           </div>
-          <div className="grid gap-4">
-            {trendingRecipes.map(recipe => <RecipeCard key={recipe.id} recipe={recipe} onClick={recipe => console.log('Recipe clicked:', recipe.title)} />)}
+          <div className="flex gap-4 overflow-x-auto pb-2">
+            {trendingRecipes.map(recipe => <div key={recipe.id} className="flex-shrink-0 w-72"><RecipeCard recipe={recipe} onClick={recipe => console.log('Recipe clicked:', recipe.title)} /></div>)}
           </div>
         </div>
 
@@ -96,8 +96,8 @@ export const HomeScreen = ({
             <span className="text-2xl">👨‍🍳</span>
             <h2 className="text-lg font-semibold text-foreground font-crimson">Recipes for you</h2>
           </div>
-          <div className="grid gap-4">
-            {forYouRecipes.map(recipe => <RecipeCard key={recipe.id} recipe={recipe} onClick={recipe => console.log('Recipe clicked:', recipe.title)} />)}
+          <div className="flex gap-4 overflow-x-auto pb-2">
+            {forYouRecipes.map(recipe => <div key={recipe.id} className="flex-shrink-0 w-72"><RecipeCard recipe={recipe} onClick={recipe => console.log('Recipe clicked:', recipe.title)} /></div>)}
           </div>
         </div>
       </div>
