@@ -46,14 +46,14 @@ export const RecipesScreen = () => {
       {/* Header */}
       <div className="bg-secondary text-secondary-foreground px-4 pt-12 pb-6">
         <div className="max-w-md mx-auto">
-          <h1 className="text-2xl font-bold mb-6 font-crimson">My Recipe Collection</h1>
+          <h1 className="text-2xl font-bold mb-6 font-crimson">My Favourite Recipes</h1>
           
           {/* Search and filter */}
           <div className="flex gap-3 mb-4">
             <div className="relative flex-1">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-secondary-foreground/60" />
               <Input 
-                placeholder="Search your recipes..."
+                placeholder="Search favourites..."
                 className="pl-10 bg-white/10 border-white/20 text-secondary-foreground placeholder-secondary-foreground/60"
               />
             </div>
@@ -91,7 +91,7 @@ export const RecipesScreen = () => {
         <div className="grid grid-cols-3 gap-4 mb-6">
           <div className="bg-card-gradient rounded-xl p-4 text-center border border-border/50">
             <div className="text-2xl font-bold text-primary mb-1 font-yeseva">{allRecipes.length}</div>
-            <div className="text-xs text-muted-foreground font-plex-mono">Saved Recipes</div>
+            <div className="text-xs text-muted-foreground font-plex-mono">Favourites</div>
           </div>
           <div className="bg-card-gradient rounded-xl p-4 text-center border border-border/50">
             <div className="text-2xl font-bold text-secondary mb-1 font-yeseva">12</div>

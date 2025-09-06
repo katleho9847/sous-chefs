@@ -1,9 +1,9 @@
-import { Settings, Heart, Trophy, Clock, Camera } from "lucide-react";
+import { Settings, Heart, Trophy, Clock, Camera, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { LadleIcon } from "./LadleIcon";
 
-export const ProfileScreen = () => {
+export const ProfileScreen = ({ onClose }: { onClose?: () => void }) => {
   const achievements = [
     { icon: "ladle", title: "Master Chef", description: "Cooked 50+ recipes", earned: true },
     { icon: Heart, title: "Healthy Eater", description: "Made 20 healthy meals", earned: true },
@@ -15,34 +15,48 @@ export const ProfileScreen = () => {
     <div className="min-h-screen bg-background pb-20">
       {/* Header */}
       <div className="bg-warm-gradient text-white px-4 pt-12 pb-8">
-        <div className="max-w-md mx-auto text-center">
-          <div className="relative inline-block mb-4">
-            <div className="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
-              <span className="text-3xl">👩‍🍳</span>
-            </div>
+        <div className="max-w-md mx-auto">
+          {/* Back button */}
+          {onClose && (
             <Button 
-              size="sm" 
-              className="absolute -bottom-2 -right-2 w-8 h-8 rounded-full bg-primary hover:bg-primary-dark p-0"
+              variant="ghost" 
+              size="sm"
+              className="text-white hover:bg-white/20 mb-4 p-2"
+              onClick={onClose}
             >
-              <Camera className="w-4 h-4" />
+              <ArrowLeft className="w-5 h-5" />
             </Button>
-          </div>
+          )}
           
-          <h1 className="text-2xl font-bold mb-2 font-yeseva">Rachel Thompson</h1>
-          <p className="text-white/80 mb-4 font-work-sans">Cooking enthusiast since 2024</p>
+          <div className="text-center">
+            <div className="relative inline-block mb-4">
+              <div className="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                <span className="text-3xl">👩‍🍳</span>
+              </div>
+              <Button 
+                size="sm" 
+                className="absolute -bottom-2 -right-2 w-8 h-8 rounded-full bg-primary hover:bg-primary-dark p-0"
+              >
+                <Camera className="w-4 h-4" />
+              </Button>
+            </div>
           
-          <div className="flex justify-center gap-8">
-            <div className="text-center">
-              <div className="text-xl font-bold font-yeseva">47</div>
-              <div className="text-xs text-white/80 font-plex-mono">Recipes Cooked</div>
-            </div>
-            <div className="text-center">
-              <div className="text-xl font-bold font-yeseva">12</div>
-              <div className="text-xs text-white/80 font-plex-mono">Favorites</div>
-            </div>
-            <div className="text-center">
-              <div className="text-xl font-bold font-yeseva">3</div>
-              <div className="text-xs text-white/80 font-plex-mono">Created</div>
+            <h1 className="text-2xl font-bold mb-2 font-yeseva">Rachel Thompson</h1>
+            <p className="text-white/80 mb-4 font-work-sans">Cooking enthusiast since 2024</p>
+            
+            <div className="flex justify-center gap-8">
+              <div className="text-center">
+                <div className="text-xl font-bold font-yeseva">47</div>
+                <div className="text-xs text-white/80 font-plex-mono">Recipes Cooked</div>
+              </div>
+              <div className="text-center">
+                <div className="text-xl font-bold font-yeseva">12</div>
+                <div className="text-xs text-white/80 font-plex-mono">Favorites</div>
+              </div>
+              <div className="text-center">
+                <div className="text-xl font-bold font-yeseva">3</div>
+                <div className="text-xs text-white/80 font-plex-mono">Created</div>
+              </div>
             </div>
           </div>
         </div>

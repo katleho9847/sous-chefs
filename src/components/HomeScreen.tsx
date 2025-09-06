@@ -46,7 +46,7 @@ const quickSuggestions = [
   "Pasta recipes", "Healthy bowls", "Quick dinners", "Vegetarian", "One-pot meals"
 ];
 
-export const HomeScreen = () => {
+export const HomeScreen = ({ onProfileClick }: { onProfileClick?: () => void }) => {
   const [searchQuery, setSearchQuery] = useState("");
 
   return (
@@ -59,8 +59,18 @@ export const HomeScreen = () => {
               <h1 className="text-2xl font-bold mb-1 font-crimson">Good evening, Rachel! 🌅</h1>
               <p className="text-white/80 font-work-sans">What shall we cook today?</p>
             </div>
-            <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
-              <LadleIcon size={24} className="text-white" />
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                <LadleIcon size={24} className="text-white" />
+              </div>
+              <Button 
+                variant="ghost" 
+                size="sm"
+                className="text-white hover:bg-white/20 p-2"
+                onClick={onProfileClick}
+              >
+                <span className="text-2xl">👩‍🍳</span>
+              </Button>
             </div>
           </div>
 
