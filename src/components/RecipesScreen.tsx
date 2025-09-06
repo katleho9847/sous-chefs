@@ -13,9 +13,8 @@ const allRecipes = [
     title: "Creamy Mushroom Pasta",
     image: pastaImage,
     cookTime: "25 min",
-    servings: 4,
+    chef: "Gordon R",
     rating: 4.8,
-    difficulty: "Easy",
     description: "A rich and creamy pasta dish with sautéed mushrooms and fresh herbs."
   },
   {
@@ -23,9 +22,8 @@ const allRecipes = [
     title: "Colorful Buddha Bowl",
     image: buddhaBowlImage,
     cookTime: "15 min",
-    servings: 2,
+    chef: "Jamie O",
     rating: 4.9,
-    difficulty: "Easy",
     description: "A nutritious bowl packed with fresh vegetables and quinoa."
   },
   {
@@ -33,9 +31,8 @@ const allRecipes = [
     title: "Herb Roasted Chicken",
     image: chickenDinnerImage,
     cookTime: "45 min",
-    servings: 6,
+    chef: "Marco P",
     rating: 4.7,
-    difficulty: "Medium",
     description: "Juicy roasted chicken with aromatic herbs and vegetables."
   },
 ];

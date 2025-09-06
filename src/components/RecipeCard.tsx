@@ -1,4 +1,4 @@
-import { Clock, Users, Star } from "lucide-react";
+import { Clock, User, Star } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 interface Recipe {
@@ -6,9 +6,8 @@ interface Recipe {
   title: string;
   image: string;
   cookTime: string;
-  servings: number;
+  chef: string;
   rating: number;
-  difficulty: string;
   description: string;
 }
 
@@ -29,12 +28,9 @@ export const RecipeCard = ({ recipe, onClick }: RecipeCardProps) => {
           alt={recipe.title}
           className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
         />
-        <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-full px-2 py-1 flex items-center gap-1">
-          <Star className="w-3 h-3 text-primary fill-primary" />
-          <span className="text-xs font-medium text-secondary font-plex-mono">{recipe.rating}</span>
-        </div>
-        <div className="absolute top-3 left-3 bg-secondary/90 backdrop-blur-sm rounded-full px-2 py-1">
-          <span className="text-xs font-medium text-secondary-foreground font-plex-mono">{recipe.difficulty}</span>
+        <div className="absolute top-3 right-3 bg-black/50 backdrop-blur-sm rounded-full px-2 py-1 flex items-center gap-1">
+          <Star className="w-3 h-3 text-white fill-white" />
+          <span className="text-xs font-medium text-white font-plex-mono">{recipe.rating}</span>
         </div>
       </div>
       
@@ -52,8 +48,8 @@ export const RecipeCard = ({ recipe, onClick }: RecipeCardProps) => {
             <span>{recipe.cookTime}</span>
           </div>
           <div className="flex items-center gap-1">
-            <Users className="w-3 h-3" />
-            <span>{recipe.servings} servings</span>
+            <User className="w-3 h-3" />
+            <span>by {recipe.chef}</span>
           </div>
         </div>
       </CardContent>

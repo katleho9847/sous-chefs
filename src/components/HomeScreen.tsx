@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Search, Sparkles, TrendingUp } from "lucide-react";
+import { Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { RecipeCard } from "./RecipeCard";
@@ -9,15 +9,14 @@ import chickenDinnerImage from "@/assets/chicken-dinner.jpg";
 import { LadleIcon } from "./LadleIcon";
 
 // Mock recipe data
-const featuredRecipes = [
+const trendingRecipes = [
   {
     id: "1",
     title: "Creamy Mushroom Pasta",
     image: pastaImage,
     cookTime: "25 min",
-    servings: 4,
+    chef: "Gordon R",
     rating: 4.8,
-    difficulty: "Easy",
     description: "A rich and creamy pasta dish with sautéed mushrooms and fresh herbs. Perfect for a cozy dinner."
   },
   {
@@ -25,9 +24,8 @@ const featuredRecipes = [
     title: "Colorful Buddha Bowl",
     image: buddhaBowlImage,
     cookTime: "15 min",
-    servings: 2,
+    chef: "Jamie O",
     rating: 4.9,
-    difficulty: "Easy",
     description: "A nutritious and vibrant bowl packed with fresh vegetables, quinoa, and a delicious tahini dressing."
   },
   {
@@ -35,10 +33,30 @@ const featuredRecipes = [
     title: "Herb Roasted Chicken",
     image: chickenDinnerImage,
     cookTime: "45 min",
-    servings: 6,
+    chef: "Marco P",
     rating: 4.7,
-    difficulty: "Medium",
     description: "Juicy roasted chicken with aromatic herbs and roasted vegetables. A perfect family dinner."
+  }
+];
+
+const forYouRecipes = [
+  {
+    id: "4",
+    title: "Mediterranean Quinoa Salad",
+    image: buddhaBowlImage,
+    cookTime: "20 min",
+    chef: "Yotam O",
+    rating: 4.6,
+    description: "Fresh and healthy quinoa salad with Mediterranean flavors and herbs."
+  },
+  {
+    id: "5",
+    title: "Classic Margherita Pizza",
+    image: pastaImage,
+    cookTime: "35 min",
+    chef: "Antonio C",
+    rating: 4.9,
+    description: "Authentic Italian pizza with fresh basil, mozzarella, and tomato sauce."
   }
 ];
 
@@ -104,34 +122,31 @@ export const HomeScreen = ({ onProfileClick }: { onProfileClick?: () => void }) 
 
       {/* Content */}
       <div className="max-w-md mx-auto px-4 py-6">
-        {/* AI Suggestions */}
+        {/* Trending Recipes */}
         <div className="mb-8">
           <div className="flex items-center gap-2 mb-4">
-            <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
-              <Sparkles className="w-4 h-4 text-primary" />
-            </div>
-            <h2 className="text-lg font-semibold text-foreground font-crimson">AI Recommendations</h2>
+            <span className="text-2xl">🔥</span>
+            <h2 className="text-lg font-semibold text-foreground font-crimson">Trending recipes</h2>
           </div>
-          <div className="bg-accent/50 rounded-xl p-4 border border-primary/10">
-            <p className="text-sm text-foreground mb-3 font-work-sans">
-              Based on your preferences, I'd recommend trying something light and fresh for tonight!
-            </p>
-            <Button size="sm" className="bg-primary hover:bg-primary-dark text-primary-foreground font-plex-mono">
-              Get Recipe Suggestion
-            </Button>
+          <div className="grid gap-4">
+            {trendingRecipes.map((recipe) => (
+              <RecipeCard 
+                key={recipe.id} 
+                recipe={recipe} 
+                onClick={(recipe) => console.log('Recipe clicked:', recipe.title)}
+              />
+            ))}
           </div>
         </div>
 
-        {/* Featured Recipes */}
+        {/* Recipes for You */}
         <div className="mb-8">
           <div className="flex items-center gap-2 mb-4">
-            <div className="w-8 h-8 bg-secondary/10 rounded-full flex items-center justify-center">
-              <TrendingUp className="w-4 h-4 text-secondary" />
-            </div>
-            <h2 className="text-lg font-semibold text-foreground font-crimson">Featured Recipes</h2>
+            <span className="text-2xl">👨‍🍳</span>
+            <h2 className="text-lg font-semibold text-foreground font-crimson">Recipes for you</h2>
           </div>
           <div className="grid gap-4">
-            {featuredRecipes.map((recipe) => (
+            {forYouRecipes.map((recipe) => (
               <RecipeCard 
                 key={recipe.id} 
                 recipe={recipe} 
