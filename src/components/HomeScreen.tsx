@@ -64,7 +64,7 @@ export const HomeScreen = ({
         <div className="max-w-md mx-auto">
           <div className="flex items-center justify-between mb-6">
             <div>
-              <h1 className="text-2xl font-bold mb-1 font-crimson">What are we cooking today?</h1>
+              <h1 className="text-2xl font-bold mb-1 font-crimson">Rachel, what are we cooking today?</h1>
             </div>
             
           </div>
