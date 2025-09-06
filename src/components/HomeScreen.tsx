@@ -11,12 +11,12 @@ import { LadleIcon } from "./LadleIcon";
 // Mock recipe data
 const trendingRecipes = [{
   id: "1",
-  title: "Creamy Mushroom Pasta",
+  title: "Classic Carbonara",
   image: pastaImage,
-  cookTime: "25 min",
+  cookTime: "20 min",
   chef: "Gordon R",
   rating: 4.8,
-  description: "A rich and creamy pasta dish with sautéed mushrooms and fresh herbs. Perfect for a cozy dinner."
+  description: "Authentic Italian carbonara with crispy pancetta, eggs, and pecorino romano cheese."
 }, {
   id: "2",
   title: "Colorful Buddha Bowl",
