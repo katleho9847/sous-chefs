@@ -24,6 +24,18 @@ interface RecipeDetailScreenProps {
   onConfirmIngredients: () => void;
 }
 
+// Mock servings data
+const getServingsForRecipe = (recipeId: string): number => {
+  const servingsMap: Record<string, number> = {
+    "1": 4, // Carbonara
+    "2": 2, // Buddha Bowl
+    "3": 6, // Herb Roasted Chicken
+    "4": 4, // Mediterranean Quinoa Salad
+    "5": 4, // Classic Margherita Pizza
+  };
+  return servingsMap[recipeId] || 4;
+};
+
 // Mock ingredients data - in a real app this would come from the recipe data
 const getIngredientsForRecipe = (recipeId: string): Ingredient[] => {
   const ingredientsMap: Record<string, Ingredient[]> = {
@@ -62,6 +74,7 @@ const getIngredientsForRecipe = (recipeId: string): Ingredient[] => {
 
 export const RecipeDetailScreen = ({ recipe, onBack, onConfirmIngredients }: RecipeDetailScreenProps) => {
   const ingredients = getIngredientsForRecipe(recipe.id);
+  const servings = getServingsForRecipe(recipe.id);
 
   return (
     <div className="min-h-screen bg-background pb-20">
@@ -113,6 +126,10 @@ export const RecipeDetailScreen = ({ recipe, onBack, onConfirmIngredients }: Rec
               <div className="flex items-center gap-1">
                 <span>👨‍🍳</span>
                 <span>by {recipe.chef}</span>
+              </div>
+              <div className="flex items-center gap-1">
+                <span>🍽️</span>
+                <span>{servings} servings</span>
               </div>
             </div>
           </CardContent>
