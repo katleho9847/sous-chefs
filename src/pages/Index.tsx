@@ -1,12 +1,42 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState, useEffect } from "react";
+import { SplashScreen } from "@/components/SplashScreen";
+import { HomeScreen } from "@/components/HomeScreen";
+import { RecipesScreen } from "@/components/RecipesScreen";
+import { ProfileScreen } from "@/components/ProfileScreen";
+import { BottomNavigation } from "@/components/BottomNavigation";
 
 const Index = () => {
+  const [showSplash, setShowSplash] = useState(true);
+  const [activeTab, setActiveTab] = useState("home");
+
+  const handleSplashComplete = () => {
+    setShowSplash(false);
+  };
+
+  const renderScreen = () => {
+    switch (activeTab) {
+      case "recipes":
+        return <RecipesScreen />;
+      case "profile":
+        return <ProfileScreen />;
+      default:
+        return <HomeScreen />;
+    }
+  };
+
+  if (showSplash) {
+    return <SplashScreen onComplete={handleSplashComplete} />;
+  }
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <div className="min-h-screen bg-background">
+      <div className="animate-slide-up">
+        {renderScreen()}
       </div>
+      <BottomNavigation 
+        activeTab={activeTab} 
+        onTabChange={setActiveTab} 
+      />
     </div>
   );
 };

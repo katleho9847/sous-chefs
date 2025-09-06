@@ -2,41 +2,61 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* AI Cooking Companion Design System 
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 28 100% 98%;
+    --foreground: 180 100% 13%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 180 100% 13%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 180 100% 13%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary: Warm Orange #FF6B35 */
+    --primary: 18 100% 60%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 18 100% 70%;
+    --primary-dark: 18 100% 50%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary: Deep Teal #004643 */ 
+    --secondary: 180 100% 13%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-light: 180 100% 23%;
+    --secondary-dark: 180 100% 8%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 28 50% 95%;
+    --muted-foreground: 180 25% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 35 100% 85%;
+    --accent-foreground: 180 100% 13%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 28 30% 90%;
+    --input: 28 30% 95%;
+    --ring: 18 100% 60%;
 
-    --radius: 0.5rem;
+    --radius: 1rem;
+
+    /* Cooking App Specific Colors */
+    --warm-gradient: linear-gradient(135deg, hsl(18 100% 60%) 0%, hsl(35 95% 65%) 50%, hsl(180 100% 23%) 100%);
+    --hero-gradient: linear-gradient(135deg, hsl(18 100% 60%) 0%, hsl(180 100% 13%) 100%);
+    --card-gradient: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(28 50% 98%) 100%);
+    
+    /* Shadows */
+    --shadow-warm: 0 10px 30px -10px hsl(18 100% 60% / 0.3);
+    --shadow-card: 0 4px 20px -4px hsl(18 100% 60% / 0.1);
+    --shadow-floating: 0 20px 40px -15px hsl(18 100% 60% / 0.2);
+
+    /* Animation */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
 
