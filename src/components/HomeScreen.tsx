@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { RecipeCard } from "./RecipeCard";
 import pastaImage from "@/assets/pasta-recipe.jpg";
+import carbonaraImage from "@/assets/carbonara-recipe.jpg";
 import buddhaBowlImage from "@/assets/buddha-bowl.jpg";
 import chickenDinnerImage from "@/assets/chicken-dinner.jpg";
 import { LadleIcon } from "./LadleIcon";
@@ -12,7 +13,7 @@ import { LadleIcon } from "./LadleIcon";
 const trendingRecipes = [{
   id: "1",
   title: "Classic Carbonara",
-  image: pastaImage,
+  image: carbonaraImage,
   cookTime: "20 min",
   chef: "Gordon R",
   rating: 4.8,
