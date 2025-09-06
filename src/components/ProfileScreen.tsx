@@ -1,10 +1,11 @@
-import { Settings, Heart, Trophy, Clock, ChefHat, Camera } from "lucide-react";
+import { Settings, Heart, Trophy, Clock, Camera } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { LadleIcon } from "./LadleIcon";
 
 export const ProfileScreen = () => {
   const achievements = [
-    { icon: ChefHat, title: "Master Chef", description: "Cooked 50+ recipes", earned: true },
+    { icon: "ladle", title: "Master Chef", description: "Cooked 50+ recipes", earned: true },
     { icon: Heart, title: "Healthy Eater", description: "Made 20 healthy meals", earned: true },
     { icon: Clock, title: "Speed Cook", description: "5 meals under 15 mins", earned: false },
     { icon: Trophy, title: "Recipe Master", description: "Created 10 recipes", earned: false },
@@ -75,7 +76,8 @@ export const ProfileScreen = () => {
           <h3 className="text-lg font-semibold text-foreground mb-4 font-crimson">Achievements</h3>
           <div className="grid grid-cols-2 gap-3">
             {achievements.map((achievement) => {
-              const Icon = achievement.icon;
+              const isLadle = achievement.icon === "ladle";
+              const Icon = isLadle ? null : achievement.icon;
               return (
                 <Card 
                   key={achievement.title}
@@ -91,7 +93,11 @@ export const ProfileScreen = () => {
                         ? 'bg-primary text-primary-foreground' 
                         : 'bg-muted text-muted-foreground'
                     }`}>
-                      <Icon className="w-6 h-6" />
+                      {isLadle ? (
+                        <LadleIcon size={24} />
+                      ) : (
+                        <Icon className="w-6 h-6" />
+                      )}
                     </div>
                     <h4 className={`font-medium text-sm mb-1 font-plex-mono ${
                       achievement.earned ? 'text-foreground' : 'text-muted-foreground'
@@ -122,7 +128,7 @@ export const ProfileScreen = () => {
                 Dietary Preferences
               </Button>
               <Button variant="ghost" className="w-full justify-start">
-                <ChefHat className="w-4 h-4 mr-3" />
+                <LadleIcon size={16} className="mr-3" />
                 Cooking Skills Level
               </Button>
             </div>

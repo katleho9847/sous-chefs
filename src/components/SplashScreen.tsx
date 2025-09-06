@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import { ChefHat, Utensils, Heart } from "lucide-react";
+import { Utensils, Heart } from "lucide-react";
 import cookingHero from "@/assets/cooking-hero.jpg";
+import { LadleIcon } from "./LadleIcon";
 
 interface SplashScreenProps {
   onComplete: () => void;
@@ -33,10 +34,10 @@ export const SplashScreen = ({ onComplete }: SplashScreenProps) => {
         />
       </div>
 
-      {/* Main chef hat icon */}
+      {/* Main ladle logo */}
       <div className="relative z-10 mb-8">
         <div className="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm animate-bounce-in">
-          <ChefHat className="w-12 h-12 text-white" />
+          <LadleIcon size={48} className="text-white" />
         </div>
       </div>
 

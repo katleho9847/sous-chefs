@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { Search, Sparkles, TrendingUp, ChefHat } from "lucide-react";
+import { Search, Sparkles, TrendingUp } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { RecipeCard } from "./RecipeCard";
 import pastaImage from "@/assets/pasta-recipe.jpg";
 import buddhaBowlImage from "@/assets/buddha-bowl.jpg";
 import chickenDinnerImage from "@/assets/chicken-dinner.jpg";
+import { LadleIcon } from "./LadleIcon";
 
 // Mock recipe data
 const featuredRecipes = [
@@ -59,7 +60,7 @@ export const HomeScreen = () => {
               <p className="text-white/80 font-work-sans">What shall we cook today?</p>
             </div>
             <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
-              <ChefHat className="w-6 h-6" />
+              <LadleIcon size={24} className="text-white" />
             </div>
           </div>
 
