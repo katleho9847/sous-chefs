@@ -35,9 +35,12 @@ export const SplashScreen = ({ onComplete }: SplashScreenProps) => {
 
       {/* Main ladle logo */}
       <div className="relative z-10 mb-8">
-        <div className="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm animate-bounce-in">
-          <LadleIcon size={48} className="text-white" />
-        </div>
+        <img 
+          src="/lovable-uploads/c0d29651-775e-4fbd-a8ca-39072b446b12.png" 
+          alt="Ladle Logo" 
+          className="w-32 h-32 mx-auto animate-bounce-in"
+          style={{ filter: 'drop-shadow(0 10px 30px rgba(0,0,0,0.3))' }}
+        />
       </div>
 
       {/* Greeting text */}

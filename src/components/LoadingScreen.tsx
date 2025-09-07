@@ -33,28 +33,19 @@ export const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
       </div>
 
       <div className="max-w-md mx-auto px-6 text-center">
-        {/* Loading Icon */}
+        {/* Logo */}
         <div className="mb-8">
-          <div className="w-24 h-24 mx-auto bg-primary rounded-full flex items-center justify-center animate-cooking">
-            <svg
-              className="w-12 h-12 text-white"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4"
-              />
-            </svg>
-          </div>
+          <img 
+            src="/lovable-uploads/c0d29651-775e-4fbd-a8ca-39072b446b12.png" 
+            alt="Ladle Logo" 
+            className="w-32 h-32 mx-auto animate-bounce-in"
+            style={{ filter: 'drop-shadow(0 10px 30px rgba(0,0,0,0.2))' }}
+          />
         </div>
 
         {/* Loading Text */}
-        <h2 className="text-3xl font-bold text-foreground mb-4 font-crimson">
-          Getting ready...
+        <h2 className="text-3xl font-bold text-primary mb-4 font-crimson">
+          Are you ready to cook?
         </h2>
         <p className="text-muted-foreground mb-8 font-work-sans">
           Preparing your cooking experience
