@@ -84,7 +84,7 @@ export const CompletionScreen = ({ onComplete }: CompletionScreenProps) => {
             <img 
               src="/lovable-uploads/d30a58d3-1b58-4826-b669-440b11117f44.png" 
               alt="TikTok" 
-              className="w-8 h-8 mr-3"
+              className="h-8 mr-3 object-contain"
             />
             Post on TikTok
           </Button>
