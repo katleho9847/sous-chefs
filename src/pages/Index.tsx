@@ -5,7 +5,7 @@ import { RecipesScreen } from "@/components/RecipesScreen";
 import { ProfileScreen } from "@/components/ProfileScreen";
 import { FriendsScreen } from "@/components/FriendsScreen";
 import { RecipeDetailScreen } from "@/components/RecipeDetailScreen";
-import { CookingScreen } from "@/components/CookingScreen";
+import { LoadingScreen } from "@/components/LoadingScreen";
 import { BottomNavigation } from "@/components/BottomNavigation";
 
 interface Recipe {
@@ -51,8 +51,10 @@ const Index = () => {
     setShowCooking(true);
   };
 
-  const handleCookingBack = () => {
+  const handleLoadingComplete = () => {
     setShowCooking(false);
+    setSelectedRecipe(null);
+    setActiveTab("home");
   };
 
   const renderScreen = () => {
@@ -60,9 +62,8 @@ const Index = () => {
     
     if (selectedRecipe && showCooking) {
       return (
-        <CookingScreen 
-          recipe={selectedRecipe}
-          onBack={handleCookingBack}
+        <LoadingScreen 
+          onComplete={handleLoadingComplete}
         />
       );
     }
