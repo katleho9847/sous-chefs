@@ -90,7 +90,7 @@ export const CompletionScreen = ({ onComplete }: CompletionScreenProps) => {
           </Button>
 
           <Button 
-            className="w-full bg-lime-500 hover:bg-lime-600 text-black py-6 text-lg font-semibold flex items-center justify-center"
+            className="w-full bg-white hover:bg-gray-100 text-lime-500 py-6 text-lg font-semibold flex items-center justify-center"
             onClick={() => {
               // Mock app sharing
               console.log('Sharing within app');
