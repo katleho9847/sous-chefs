@@ -36,7 +36,7 @@ export const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
         {/* Logo */}
         <div className="mb-8">
           <img 
-            src="/lovable-uploads/c0d29651-775e-4fbd-a8ca-39072b446b12.png" 
+            src="/lovable-uploads/Ladle.svg" 
             alt="Ladle Logo" 
             className="w-32 h-32 mx-auto animate-bounce-in"
             style={{ filter: 'drop-shadow(0 10px 30px rgba(0,0,0,0.2))' }}
