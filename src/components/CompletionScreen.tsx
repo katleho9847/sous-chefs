@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import carbonaraCompletion from "@/assets/carbonara-completion.jpg";
-import { Instagram, Video, Users } from "lucide-react";
+import { Instagram, Users } from "lucide-react";
 
 interface CompletionScreenProps {
   onComplete: () => void;
@@ -81,7 +81,11 @@ export const CompletionScreen = ({ onComplete }: CompletionScreenProps) => {
               console.log('Sharing to TikTok');
             }}
           >
-            <Video className="w-8 h-8 mr-3" />
+            <img 
+              src="/lovable-uploads/d30a58d3-1b58-4826-b669-440b11117f44.png" 
+              alt="TikTok" 
+              className="w-8 h-8 mr-3"
+            />
             Post on TikTok
           </Button>
 
@@ -93,7 +97,7 @@ export const CompletionScreen = ({ onComplete }: CompletionScreenProps) => {
             }}
           >
             <Users className="w-8 h-8 mr-3" />
-            Share in App
+            Share on Ladle
           </Button>
         </div>
       </div>
