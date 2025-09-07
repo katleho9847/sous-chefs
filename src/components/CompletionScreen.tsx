@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import carbonaraCompletion from "@/assets/carbonara-completion.jpg";
 import { Instagram } from "lucide-react";
 
 interface CompletionScreenProps {
@@ -19,7 +18,7 @@ export const CompletionScreen = ({ onComplete }: CompletionScreenProps) => {
       <div 
         className="absolute inset-0 bg-cover bg-center"
         style={{ 
-          backgroundImage: `url(${carbonaraCompletion})`,
+          backgroundImage: `url(/lovable-uploads/069d8afd-c8e9-46a7-8aee-38f9783f3af4.png)`,
           filter: 'brightness(0.7)'
         }}
       />
