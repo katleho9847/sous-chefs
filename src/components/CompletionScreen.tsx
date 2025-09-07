@@ -37,7 +37,7 @@ export const CompletionScreen = ({ onComplete }: CompletionScreenProps) => {
 
           {/* Stats Below Title - Right Aligned to Buttons */}
           <div className="w-80 flex flex-col items-end space-y-3">
-            <div className="bg-black/50 rounded-lg p-3 backdrop-blur-sm text-center">
+            <div className="bg-black/50 rounded-lg p-3 backdrop-blur-sm text-center w-20 h-16 flex flex-col justify-center">
               <div className="flex items-center justify-center gap-2 mb-1">
                 <img 
                   src="/lovable-uploads/Ladle.svg" 
@@ -49,12 +49,12 @@ export const CompletionScreen = ({ onComplete }: CompletionScreenProps) => {
               <p className="text-xs opacity-80">Ladles</p>
             </div>
 
-            <div className="bg-black/50 rounded-lg p-3 backdrop-blur-sm text-center">
+            <div className="bg-black/50 rounded-lg p-3 backdrop-blur-sm text-center w-20 h-16 flex flex-col justify-center">
               <div className="text-lg font-bold mb-1">{stats.fuckups}</div>
-              <p className="text-xs opacity-80">Fuckups</p>
+              <p className="text-xs opacity-80">F*ups</p>
             </div>
 
-            <div className="bg-black/50 rounded-lg p-3 backdrop-blur-sm text-center">
+            <div className="bg-black/50 rounded-lg p-3 backdrop-blur-sm text-center w-20 h-16 flex flex-col justify-center">
               <div className="text-lg font-bold mb-1">{stats.time}</div>
               <p className="text-xs opacity-80">Time</p>
             </div>
