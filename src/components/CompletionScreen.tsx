@@ -35,8 +35,8 @@ export const CompletionScreen = ({ onComplete }: CompletionScreenProps) => {
             Ready to share?
           </h1>
 
-          {/* Stats Below Title */}
-          <div className="flex flex-col items-center space-y-3">
+          {/* Stats Below Title - Right Aligned to Buttons */}
+          <div className="w-80 flex flex-col items-end space-y-3">
             <div className="bg-black/50 rounded-lg p-3 backdrop-blur-sm text-center">
               <div className="flex items-center justify-center gap-2 mb-1">
                 <img 
@@ -62,7 +62,7 @@ export const CompletionScreen = ({ onComplete }: CompletionScreenProps) => {
         </div>
 
         {/* Bottom Buttons */}
-        <div className="space-y-4 max-w-sm mx-auto pb-8">
+        <div className="space-y-4 w-80 mx-auto pb-8">
           <Button 
             className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-6 text-lg font-semibold flex items-center justify-center"
             onClick={() => {
