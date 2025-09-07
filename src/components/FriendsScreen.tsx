@@ -2,6 +2,8 @@ import { Search, UserPlus, MessageCircle, Clock, Award, Zap } from "lucide-react
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import carbonaraImg from "@/assets/carbonara-recipe.jpg";
+import buddhabowlImg from "@/assets/buddha-bowl.jpg";
 
 // Mock friends cooking activity data
 const friends = [
@@ -13,7 +15,7 @@ const friends = [
     cookTime: "35min",
     ladles: 12,
     fuckups: 0,
-    foodImage: "https://images.unsplash.com/photo-1588013273468-315900bafd4d?w=400&h=300&fit=crop",
+    foodImage: carbonaraImg,
     timestamp: "2 hours ago",
     location: "Home Kitchen",
     isOnline: true
@@ -52,7 +54,7 @@ const friends = [
     cookTime: "45min",
     ladles: 15,
     fuckups: 0,
-    foodImage: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=300&fit=crop",
+    foodImage: buddhabowlImg,
     timestamp: "Yesterday",
     location: "Home",
     isOnline: true
