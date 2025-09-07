@@ -13,7 +13,7 @@ const friends = [
     cookTime: "35min",
     ladles: 12,
     fuckups: 0,
-    foodImage: "https://images.unsplash.com/photo-1621996346565-e3dbc353d30e?w=400&h=300&fit=crop",
+    foodImage: "https://images.unsplash.com/photo-1588013273468-315900bafd4d?w=400&h=300&fit=crop",
     timestamp: "2 hours ago",
     location: "Home Kitchen",
     isOnline: true
@@ -26,7 +26,7 @@ const friends = [
     cookTime: "28min",
     ladles: 8,
     fuckups: 2,
-    foodImage: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=400&h=300&fit=crop",
+    foodImage: "https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?w=400&h=300&fit=crop",
     timestamp: "5 hours ago",
     location: "Apartment",
     isOnline: true
@@ -52,7 +52,7 @@ const friends = [
     cookTime: "45min",
     ladles: 15,
     fuckups: 0,
-    foodImage: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&h=300&fit=crop",
+    foodImage: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=300&fit=crop",
     timestamp: "Yesterday",
     location: "Home",
     isOnline: true
@@ -130,44 +130,34 @@ export const FriendsScreen = () => {
               </div>
             </CardContent>
 
-            {/* Food Image */}
+            {/* Food Image with Overlay Stats */}
             <div className="relative">
               <img 
                 src={friend.foodImage} 
                 alt={friend.dishName}
                 className="w-full h-64 object-cover"
               />
+              
+              {/* Top overlay stats */}
+              <div className="absolute top-3 left-3 bg-black/50 backdrop-blur-sm rounded-full px-2 py-1 flex items-center gap-1">
+                <Clock className="w-3 h-3 text-white" />
+                <span className="text-xs font-medium text-white font-plex-mono">{friend.cookTime}</span>
+              </div>
+              
+              <div className="absolute top-3 right-3 bg-black/50 backdrop-blur-sm rounded-full px-2 py-1 flex items-center gap-1">
+                <Award className="w-3 h-3 text-white" />
+                <span className="text-xs font-medium text-white font-plex-mono">{friend.ladles}</span>
+              </div>
+              
+              <div className="absolute top-12 right-3 bg-black/50 backdrop-blur-sm rounded-full px-2 py-1 flex items-center gap-1">
+                <Zap className="w-3 h-3 text-white" />
+                <span className="text-xs font-medium text-white font-plex-mono">{friend.fuckups}</span>
+              </div>
+
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
                 <h3 className="text-white font-bold text-lg font-crimson">{friend.dishName}</h3>
               </div>
             </div>
-
-            {/* Stats */}
-            <CardContent className="p-4 pt-3">
-              <div className="grid grid-cols-3 gap-4">
-                <div className="text-center">
-                  <div className="flex items-center justify-center gap-1 mb-1">
-                    <Clock className="w-4 h-4 text-muted-foreground" />
-                  </div>
-                  <div className="text-sm font-bold text-foreground font-plex-mono">{friend.cookTime}</div>
-                  <div className="text-xs text-muted-foreground">Cook Time</div>
-                </div>
-                <div className="text-center">
-                  <div className="flex items-center justify-center gap-1 mb-1">
-                    <Award className="w-4 h-4 text-muted-foreground" />
-                  </div>
-                  <div className="text-sm font-bold text-foreground font-plex-mono">{friend.ladles}</div>
-                  <div className="text-xs text-muted-foreground">Ladles</div>
-                </div>
-                <div className="text-center">
-                  <div className="flex items-center justify-center gap-1 mb-1">
-                    <Zap className="w-4 h-4 text-muted-foreground" />
-                  </div>
-                  <div className="text-sm font-bold text-foreground font-plex-mono">{friend.fuckups}</div>
-                  <div className="text-xs text-muted-foreground">F*ck-ups</div>
-                </div>
-              </div>
-            </CardContent>
           </Card>
         ))}
       </div>
