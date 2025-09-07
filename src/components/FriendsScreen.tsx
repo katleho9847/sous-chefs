@@ -15,7 +15,7 @@ const friends = [
     cookTime: "35min",
     ladles: 12,
     fuckups: 0,
-    foodImage: carbonaraImg,
+    foodImage: "/lovable-uploads/285f7fb8-2486-42f4-8e61-b6a281525f42.png",
     timestamp: "2 hours ago",
     location: "Home Kitchen",
     isOnline: true
