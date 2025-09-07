@@ -1,45 +1,61 @@
-import { Search, UserPlus, MessageCircle, Crown } from "lucide-react";
+import { Search, UserPlus, MessageCircle, Clock, Award, Zap } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
-// Mock friends data
+// Mock friends cooking activity data
 const friends = [
   {
     id: "1",
     name: "Sarah Johnson",
     avatar: "👩‍🍳",
-    status: "Cooking pasta carbonara",
-    recipesShared: 23,
-    isOnline: true,
-    isBestFriend: true
+    dishName: "Pasta Carbonara",
+    cookTime: "35min",
+    ladles: 12,
+    fuckups: 0,
+    foodImage: "https://images.unsplash.com/photo-1621996346565-e3dbc353d30e?w=400&h=300&fit=crop",
+    timestamp: "2 hours ago",
+    location: "Home Kitchen",
+    isOnline: true
   },
   {
     id: "2", 
     name: "Mike Chen",
     avatar: "👨‍🍳",
-    status: "Just made amazing tacos! 🌮",
-    recipesShared: 15,
-    isOnline: true,
-    isBestFriend: false
+    dishName: "Street Tacos",
+    cookTime: "28min",
+    ladles: 8,
+    fuckups: 2,
+    foodImage: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=400&h=300&fit=crop",
+    timestamp: "5 hours ago",
+    location: "Apartment",
+    isOnline: true
   },
   {
     id: "3",
     name: "Emma Wilson", 
     avatar: "👩‍🦰",
-    status: "Trying new dessert recipe",
-    recipesShared: 31,
-    isOnline: false,
-    isBestFriend: true
+    dishName: "Chocolate Soufflé",
+    cookTime: "1h 15min",
+    ladles: 25,
+    fuckups: 1,
+    foodImage: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=300&fit=crop",
+    timestamp: "Yesterday",
+    location: "Emma's Kitchen",
+    isOnline: false
   },
   {
     id: "4",
     name: "David Kim",
     avatar: "👨‍🍳",
-    status: "Meal prep Sunday! 💪",
-    recipesShared: 8,
-    isOnline: true,
-    isBestFriend: false
+    dishName: "Buddha Bowl",
+    cookTime: "45min",
+    ladles: 15,
+    fuckups: 0,
+    foodImage: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&h=300&fit=crop",
+    timestamp: "Yesterday",
+    location: "Home",
+    isOnline: true
   }
 ];
 
@@ -49,7 +65,7 @@ export const FriendsScreen = () => {
       {/* Header */}
       <div className="bg-hero-gradient text-white px-4 pt-6 pb-4">
         <div className="max-w-md mx-auto">
-          <h1 className="text-2xl font-bold mb-6 font-crimson">Cooking Friends</h1>
+          <h1 className="text-2xl font-bold mb-6 font-crimson">Cooking Feed</h1>
           
           {/* Search and add friend */}
           <div className="flex gap-3 mb-4">
@@ -80,81 +96,80 @@ export const FriendsScreen = () => {
               <div className="text-xs opacity-80 font-plex-mono">Online</div>
             </div>
             <div className="text-center">
-              <div className="text-xl font-bold font-yeseva">{friends.reduce((acc, f) => acc + f.recipesShared, 0)}</div>
-              <div className="text-xs opacity-80 font-plex-mono">Recipes Shared</div>
+              <div className="text-xl font-bold font-yeseva">{friends.reduce((acc, f) => acc + f.ladles, 0)}</div>
+              <div className="text-xs opacity-80 font-plex-mono">Total Ladles</div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Content */}
-      <div className="max-w-md mx-auto px-4 py-6 space-y-6">
-        {/* Best Friends */}
-        <div>
-          <h3 className="text-lg font-semibold text-foreground mb-4 font-crimson">Best Cooking Buddies</h3>
-          <div className="space-y-3">
-            {friends.filter(friend => friend.isBestFriend).map((friend) => (
-              <Card key={friend.id} className="bg-card-gradient border border-border/50 shadow-card">
-                <CardContent className="p-4">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <div className="relative">
-                        <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                          <span className="text-2xl">{friend.avatar}</span>
-                        </div>
-                        {friend.isOnline && (
-                          <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-primary rounded-full border-2 border-background" />
-                        )}
-                        <Crown className="absolute -top-2 -right-2 w-4 h-4 text-secondary" />
-                      </div>
-                      <div className="flex-1">
-                        <h4 className="font-medium text-foreground font-crimson">{friend.name}</h4>
-                        <p className="text-sm text-muted-foreground font-work-sans">{friend.status}</p>
-                        <p className="text-xs text-primary font-plex-mono">{friend.recipesShared} recipes shared</p>
-                      </div>
-                    </div>
-                    <Button variant="ghost" size="sm">
-                      <MessageCircle className="w-4 h-4" />
-                    </Button>
+      {/* Visual Feed */}
+      <div className="max-w-md mx-auto px-4 py-6 space-y-4">
+        {friends.map((friend) => (
+          <Card key={friend.id} className="bg-card-gradient border border-border/50 shadow-card overflow-hidden">
+            {/* Friend Info Header */}
+            <CardContent className="p-4 pb-3">
+              <div className="flex items-center gap-3">
+                <div className="relative">
+                  <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
+                    <span className="text-lg">{friend.avatar}</span>
                   </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
+                  {friend.isOnline && (
+                    <div className="absolute -bottom-1 -right-1 w-3 h-3 bg-primary rounded-full border-2 border-background" />
+                  )}
+                </div>
+                <div className="flex-1">
+                  <h4 className="font-medium text-foreground font-crimson">{friend.name}</h4>
+                  <p className="text-xs text-muted-foreground font-plex-mono">
+                    {friend.timestamp} • {friend.location}
+                  </p>
+                </div>
+                <Button variant="ghost" size="sm">
+                  <MessageCircle className="w-4 h-4" />
+                </Button>
+              </div>
+            </CardContent>
 
-        {/* All Friends */}
-        <div>
-          <h3 className="text-lg font-semibold text-foreground mb-4 font-crimson">All Friends</h3>
-          <div className="space-y-3">
-            {friends.filter(friend => !friend.isBestFriend).map((friend) => (
-              <Card key={friend.id} className="bg-card-gradient border border-border/50 shadow-card">
-                <CardContent className="p-4">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <div className="relative">
-                        <div className="w-10 h-10 bg-muted rounded-full flex items-center justify-center">
-                          <span className="text-lg">{friend.avatar}</span>
-                        </div>
-                        {friend.isOnline && (
-                          <div className="absolute -bottom-1 -right-1 w-3 h-3 bg-primary rounded-full border-2 border-background" />
-                        )}
-                      </div>
-                      <div className="flex-1">
-                        <h4 className="font-medium text-foreground font-crimson">{friend.name}</h4>
-                        <p className="text-sm text-muted-foreground font-work-sans">{friend.status}</p>
-                        <p className="text-xs text-muted-foreground font-plex-mono">{friend.recipesShared} recipes shared</p>
-                      </div>
-                    </div>
-                    <Button variant="ghost" size="sm">
-                      <MessageCircle className="w-4 h-4" />
-                    </Button>
+            {/* Food Image */}
+            <div className="relative">
+              <img 
+                src={friend.foodImage} 
+                alt={friend.dishName}
+                className="w-full h-64 object-cover"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+                <h3 className="text-white font-bold text-lg font-crimson">{friend.dishName}</h3>
+              </div>
+            </div>
+
+            {/* Stats */}
+            <CardContent className="p-4 pt-3">
+              <div className="grid grid-cols-3 gap-4">
+                <div className="text-center">
+                  <div className="flex items-center justify-center gap-1 mb-1">
+                    <Clock className="w-4 h-4 text-muted-foreground" />
                   </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
+                  <div className="text-sm font-bold text-foreground font-plex-mono">{friend.cookTime}</div>
+                  <div className="text-xs text-muted-foreground">Cook Time</div>
+                </div>
+                <div className="text-center">
+                  <div className="flex items-center justify-center gap-1 mb-1">
+                    <Award className="w-4 h-4 text-muted-foreground" />
+                  </div>
+                  <div className="text-sm font-bold text-foreground font-plex-mono">{friend.ladles}</div>
+                  <div className="text-xs text-muted-foreground">Ladles</div>
+                </div>
+                <div className="text-center">
+                  <div className="flex items-center justify-center gap-1 mb-1">
+                    <Zap className="w-4 h-4 text-muted-foreground" />
+                  </div>
+                  <div className="text-sm font-bold text-foreground font-plex-mono">{friend.fuckups}</div>
+                  <div className="text-xs text-muted-foreground">F*ck-ups</div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        ))}
       </div>
     </div>
   );
