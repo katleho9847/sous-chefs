@@ -10,7 +10,7 @@ export const CompletionScreen = ({ onComplete }: CompletionScreenProps) => {
   const stats = {
     ladles: Math.floor(Math.random() * 8) + 3, // Random 3-10
     fuckups: Math.floor(Math.random() * 3), // Random 0-2
-    time: `${Math.floor(Math.random() * 20) + 25}m ${Math.floor(Math.random() * 60)}s` // Random 25-45 minutes
+    time: `${Math.floor(Math.random() * 20) + 25}m` // Random 25-45 minutes
   };
 
   return (
@@ -36,27 +36,27 @@ export const CompletionScreen = ({ onComplete }: CompletionScreenProps) => {
           </h1>
 
           {/* Stats Below Title */}
-          <div className="flex justify-center gap-6">
-            <div className="bg-black/50 rounded-lg p-4 backdrop-blur-sm text-center">
+          <div className="flex flex-col items-center space-y-3">
+            <div className="bg-black/50 rounded-lg p-3 backdrop-blur-sm text-center">
               <div className="flex items-center justify-center gap-2 mb-1">
                 <img 
                   src="/lovable-uploads/Ladle.svg" 
                   alt="Ladle" 
-                  className="w-8 h-8"
+                  className="w-5 h-5"
                 />
-                <span className="text-2xl font-bold">{stats.ladles}</span>
+                <span className="text-lg font-bold">{stats.ladles}</span>
               </div>
-              <p className="text-sm opacity-80">Ladles</p>
+              <p className="text-xs opacity-80">Ladles</p>
             </div>
 
-            <div className="bg-black/50 rounded-lg p-4 backdrop-blur-sm text-center">
-              <div className="text-2xl font-bold mb-1">{stats.fuckups}</div>
-              <p className="text-sm opacity-80">Fuckups</p>
+            <div className="bg-black/50 rounded-lg p-3 backdrop-blur-sm text-center">
+              <div className="text-lg font-bold mb-1">{stats.fuckups}</div>
+              <p className="text-xs opacity-80">Fuckups</p>
             </div>
 
-            <div className="bg-black/50 rounded-lg p-4 backdrop-blur-sm text-center">
-              <div className="text-2xl font-bold mb-1">{stats.time}</div>
-              <p className="text-sm opacity-80">Time</p>
+            <div className="bg-black/50 rounded-lg p-3 backdrop-blur-sm text-center">
+              <div className="text-lg font-bold mb-1">{stats.time}</div>
+              <p className="text-xs opacity-80">Time</p>
             </div>
           </div>
         </div>
