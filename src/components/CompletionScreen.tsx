@@ -29,36 +29,36 @@ export const CompletionScreen = ({ onComplete }: CompletionScreenProps) => {
 
       {/* Content */}
       <div className="relative z-10 min-h-screen flex flex-col justify-between p-6 text-white">
-        {/* Stats Overlay - Right Side Vertical */}
-        <div className="absolute top-12 right-6 space-y-4">
-          <div className="bg-black/50 rounded-lg p-4 backdrop-blur-sm text-center">
-            <div className="flex items-center justify-center gap-2 mb-1">
-              <img 
-                src="/lovable-uploads/Ladle.svg" 
-                alt="Ladle" 
-                className="w-8 h-8"
-              />
-              <span className="text-2xl font-bold">{stats.ladles}</span>
-            </div>
-            <p className="text-sm opacity-80">Ladles</p>
-          </div>
-
-          <div className="bg-black/50 rounded-lg p-4 backdrop-blur-sm text-center">
-            <div className="text-2xl font-bold mb-1">{stats.fuckups}</div>
-            <p className="text-sm opacity-80">Fuckups</p>
-          </div>
-
-          <div className="bg-black/50 rounded-lg p-4 backdrop-blur-sm text-center">
-            <div className="text-2xl font-bold mb-1">{stats.time}</div>
-            <p className="text-sm opacity-80">Time</p>
-          </div>
-        </div>
-
         {/* Center Content */}
-        <div className="flex-1 flex items-center justify-center">
+        <div className="flex-1 flex flex-col items-center justify-center space-y-8">
           <h1 className="text-4xl font-bold font-crimson text-center">
             Ready to share?
           </h1>
+
+          {/* Stats Below Title */}
+          <div className="flex justify-center gap-6">
+            <div className="bg-black/50 rounded-lg p-4 backdrop-blur-sm text-center">
+              <div className="flex items-center justify-center gap-2 mb-1">
+                <img 
+                  src="/lovable-uploads/Ladle.svg" 
+                  alt="Ladle" 
+                  className="w-8 h-8"
+                />
+                <span className="text-2xl font-bold">{stats.ladles}</span>
+              </div>
+              <p className="text-sm opacity-80">Ladles</p>
+            </div>
+
+            <div className="bg-black/50 rounded-lg p-4 backdrop-blur-sm text-center">
+              <div className="text-2xl font-bold mb-1">{stats.fuckups}</div>
+              <p className="text-sm opacity-80">Fuckups</p>
+            </div>
+
+            <div className="bg-black/50 rounded-lg p-4 backdrop-blur-sm text-center">
+              <div className="text-2xl font-bold mb-1">{stats.time}</div>
+              <p className="text-sm opacity-80">Time</p>
+            </div>
+          </div>
         </div>
 
         {/* Bottom Buttons */}
