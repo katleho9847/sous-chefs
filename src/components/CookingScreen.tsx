@@ -77,32 +77,13 @@ export const CookingScreen = ({
         </div>
       </div>
 
-      {/* Cooking Instructions */}
-      <div className="absolute bottom-0 left-0 right-0 z-10 p-4">
-        <div className="max-w-md mx-auto">
-          <div className="bg-black/70 backdrop-blur-md rounded-2xl p-6 text-white">
-            <div className="text-center mb-4">
-              <div className="text-xs text-white/60 font-plex-mono mb-1">
-                Step {currentStep + 1} of {cookingSteps.length}
-              </div>
-              <div className="w-full bg-white/20 rounded-full h-1 mb-4">
-                <div className="bg-primary h-1 rounded-full transition-all duration-300" style={{
-                width: `${(currentStep + 1) / cookingSteps.length * 100}%`
-              }}></div>
-              </div>
-            </div>
-
-            <p className="text-lg leading-relaxed font-work-sans text-center mb-6">
-              {cookingSteps[currentStep]}
-            </p>
-
-            <div className="flex gap-3">
-              {currentStep > 0 && <Button onClick={() => setCurrentStep(currentStep - 1)} variant="outline" className="flex-1 bg-white/10 border-white/20 text-white hover:bg-white/20">
-                  Previous
-                </Button>}
-              
-              
-            </div>
+      {/* Ready to Cook Message */}
+      <div className="absolute inset-0 z-10 flex items-center justify-center" style={{ top: '66.67%' }}>
+        <div className="max-w-md mx-auto px-4">
+          <div className="text-center">
+            <h2 className="text-4xl font-bold text-primary font-crimson animate-bounce-in">
+              Are you ready to cook?
+            </h2>
           </div>
         </div>
       </div>
