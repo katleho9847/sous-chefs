@@ -54,47 +54,47 @@ export const CompletionScreen = ({ onComplete }: CompletionScreenProps) => {
           </div>
         </div>
 
-        {/* Bottom Content */}
-        <div className="text-center space-y-8 max-w-sm mx-auto">
-          <h1 className="text-4xl font-bold font-crimson">
+        {/* Center Content */}
+        <div className="flex-1 flex items-center justify-center">
+          <h1 className="text-4xl font-bold font-crimson text-center">
             Ready to share?
           </h1>
+        </div>
 
-          {/* Sharing Options */}
-          <div className="space-y-4">
-            <Button 
-              className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-6 text-lg font-semibold flex items-center justify-center"
-              onClick={() => {
-                // Mock Instagram sharing
-                console.log('Sharing to Instagram');
-              }}
-            >
-              <Instagram className="w-8 h-8 mr-3" />
-              Post on Instagram
-            </Button>
+        {/* Bottom Buttons */}
+        <div className="space-y-4 max-w-sm mx-auto pb-8">
+          <Button 
+            className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-6 text-lg font-semibold flex items-center justify-center"
+            onClick={() => {
+              // Mock Instagram sharing
+              console.log('Sharing to Instagram');
+            }}
+          >
+            <Instagram className="w-8 h-8 mr-3" />
+            Post on Instagram
+          </Button>
 
-            <Button 
-              className="w-full bg-black hover:bg-gray-900 text-white py-6 text-lg font-semibold flex items-center justify-center"
-              onClick={() => {
-                // Mock TikTok sharing
-                console.log('Sharing to TikTok');
-              }}
-            >
-              <Video className="w-8 h-8 mr-3" />
-              Post on TikTok
-            </Button>
+          <Button 
+            className="w-full bg-black hover:bg-gray-900 text-white py-6 text-lg font-semibold flex items-center justify-center"
+            onClick={() => {
+              // Mock TikTok sharing
+              console.log('Sharing to TikTok');
+            }}
+          >
+            <Video className="w-8 h-8 mr-3" />
+            Post on TikTok
+          </Button>
 
-            <Button 
-              className="w-full bg-lime-500 hover:bg-lime-600 text-black py-6 text-lg font-semibold flex items-center justify-center"
-              onClick={() => {
-                // Mock app sharing
-                console.log('Sharing within app');
-              }}
-            >
-              <Users className="w-8 h-8 mr-3" />
-              Share in App
-            </Button>
-          </div>
+          <Button 
+            className="w-full bg-lime-500 hover:bg-lime-600 text-black py-6 text-lg font-semibold flex items-center justify-center"
+            onClick={() => {
+              // Mock app sharing
+              console.log('Sharing within app');
+            }}
+          >
+            <Users className="w-8 h-8 mr-3" />
+            Share in App
+          </Button>
         </div>
       </div>
     </div>
