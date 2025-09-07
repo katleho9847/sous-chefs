@@ -28,7 +28,7 @@ const friends = [
     cookTime: "28min",
     ladles: 8,
     fuckups: 2,
-    foodImage: "https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?w=400&h=300&fit=crop",
+    foodImage: "/lovable-uploads/18deb6bd-7ca3-4de9-b57b-c2aff4f736c7.png",
     timestamp: "5 hours ago",
     location: "Apartment",
     isOnline: true
