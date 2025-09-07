@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import carbonaraCompletion from "@/assets/carbonara-completion.jpg";
-import { Instagram, Users } from "lucide-react";
+import { Instagram } from "lucide-react";
 
 interface CompletionScreenProps {
   onComplete: () => void;
@@ -70,7 +70,7 @@ export const CompletionScreen = ({ onComplete }: CompletionScreenProps) => {
               console.log('Sharing to Instagram');
             }}
           >
-            <Instagram className="w-8 h-8 mr-3" />
+            <Instagram className="h-8 mr-3" />
             Post on Instagram
           </Button>
 
@@ -96,7 +96,11 @@ export const CompletionScreen = ({ onComplete }: CompletionScreenProps) => {
               console.log('Sharing within app');
             }}
           >
-            <Users className="w-8 h-8 mr-3" />
+            <img 
+              src="/lovable-uploads/Ladle.svg" 
+              alt="Ladle" 
+              className="h-8 mr-3 object-contain"
+            />
             Share on Ladle
           </Button>
         </div>
